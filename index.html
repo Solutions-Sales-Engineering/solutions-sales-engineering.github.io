@@ -1,4 +1,4 @@
-<!-- /docs/index.html -->
+<!-- /index.html -->
 <!doctype html>
 <html lang="en">
 <head>
@@ -117,7 +117,6 @@
     summary{cursor:pointer; font-weight:700}
     footer{padding:40px 0; color:var(--muted); border-top:1px solid var(--border)}
     .small{font-size:.9rem}
-    /* smooth anchor scroll */
     html{scroll-behavior:smooth}
   </style>
   <script type="application/ld+json">
@@ -145,7 +144,7 @@
       </div>
       <nav class="nav-cta" aria-label="Actions">
         <a class="btn" href="#curriculum">Curriculum</a>
-        <a class="btn btn-primary" href="STRIPE_CHECKOUT_URL" rel="noopener">Enroll Now</a>
+        <a class="btn btn-primary" href="https://buy.stripe.com/bJecMZ0p75Tc9rM9TvgMw00" rel="noopener">Enroll Now</a>
       </nav>
     </div>
   </header>
@@ -177,7 +176,7 @@
             <div class="note">One‑time payment • Secure Stripe Checkout</div>
           </div>
           <div class="cta-row">
-            <a class="btn btn-primary" href="STRIPE_CHECKOUT_URL" rel="noopener">Enroll Now</a>
+            <a class="btn btn-primary" href="https://buy.stripe.com/bJecMZ0p75Tc9rM9TvgMw00" rel="noopener">Enroll Now</a>
             <a class="btn btn-outline" href="#faq">Questions? Read FAQ</a>
           </div>
           <p class="guarantee">30‑day satisfaction guarantee. If it’s not helpful, you’ll get a refund.</p>
@@ -217,7 +216,7 @@
             <li>Career growth: portfolio, storytelling, interviews</li>
           </ol>
           <div class="cta-row">
-            <a class="btn btn-primary" href="STRIPE_CHECKOUT_URL" rel="noopener">Enroll Now</a>
+            <a class="btn btn-primary" href="https://buy.stripe.com/bJecMZ0p75Tc9rM9TvgMw00" rel="noopener">Enroll Now</a>
             <a class="btn" href="#testimonials">See Results</a>
           </div>
         </div>
@@ -291,10 +290,7 @@
   </footer>
 
   <script>
-    // Set current year in footer
     document.getElementById('year').textContent = new Date().getFullYear();
-
-    // Optional: Basic outbound click tracking for the Stripe CTA (no external libs)
     (function(){
       const stripeLinks = document.querySelectorAll('a[href^="http"], a[href^="https"]');
       stripeLinks.forEach(a=>{
