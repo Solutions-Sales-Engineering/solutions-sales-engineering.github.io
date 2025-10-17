@@ -1,0 +1,308 @@
+<!-- /docs/index.html -->
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Solutions/Sales Engineer Masterclass — Become a Top‑Performing SE</title>
+  <meta name="description" content="Master discovery, demos, architecture, and deal strategy. A practical, high‑impact masterclass for Solutions & Sales Engineers." />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%2280%22 font-size=%2290%22>💡</text></svg>">
+  <meta property="og:title" content="Solutions/Sales Engineer Masterclass" />
+  <meta property="og:description" content="Master discovery, demos, architecture, and deal strategy to win more deals." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="" />
+  <meta name="theme-color" content="#0b0d12" />
+  <style>
+    :root{
+      --bg:#0b0d12;
+      --surface:#111521;
+      --surface-2:#141a29;
+      --text:#e9eef7;
+      --muted:#a9b7ca;
+      --border:#20283a;
+      --accent:#4f8cff;
+      --accent-2:#3a73df;
+      --success:#32d77d;
+      --danger:#ff6b6b;
+      --shadow: 0 20px 35px rgba(0,0,0,0.35);
+      --radius:16px;
+      --radius-sm:12px;
+      --radius-lg:22px;
+      --maxw:1000px;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial;
+      background: radial-gradient(1200px 600px at 20% -10%, #0f1422 0%, var(--bg) 60%), var(--bg);
+      color: var(--text);
+      -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale;
+    }
+    a{color:var(--accent); text-decoration:none}
+    a:hover{color:var(--accent-2)}
+    .container{max-width:var(--maxw); margin:0 auto; padding:0 22px}
+    header.nav{
+      position:sticky; top:0; z-index:50;
+      backdrop-filter:saturate(140%) blur(10px);
+      background: rgba(12,16,26,0.72);
+      border-bottom:1px solid var(--border);
+    }
+    .nav-inner{display:flex; align-items:center; justify-content:space-between; padding:12px 0}
+    .brand{display:flex; align-items:center; gap:12px}
+    .logo{
+      width:36px; height:36px; border-radius:10px;
+      background: conic-gradient(from 180deg at 50% 50%, #4f8cff, #32d77d, #9b6bff, #4f8cff);
+      box-shadow: 0 8px 16px rgba(79,140,255,0.35);
+    }
+    .brand .title{font-weight:700}
+    .nav-cta{display:flex; align-items:center; gap:8px}
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center;
+      padding:12px 16px; border-radius:12px; border:1px solid var(--border);
+      background:linear-gradient(180deg, #1a2133, #121728);
+      color:var(--text); font-weight:600;
+      transition: all .2s ease;
+    }
+    .btn:hover{transform:translateY(-1px); border-color:#2a3450}
+    .btn-primary{
+      background:linear-gradient(180deg, var(--accent), var(--accent-2));
+      border:none; color:#fff; box-shadow: 0 10px 20px rgba(79,140,255,0.35);
+    }
+    .btn-primary:hover{filter:brightness(1.05)}
+    .btn-outline{background:transparent}
+    .hero{padding:48px 0 24px}
+    .hero-wrap{display:grid; grid-template-columns: 1.15fr 0.85fr; gap:24px}
+    @media (max-width: 900px){ .hero-wrap{grid-template-columns:1fr} }
+    .tag{
+      display:inline-flex; align-items:center; gap:8px;
+      background:rgba(79,140,255,0.12); color:#cfe0ff; border:1px dashed #2c3c5e;
+      padding:8px 12px; border-radius:999px; font-weight:600; font-size:.9rem;
+    }
+    h1{font-size:2.4rem; line-height:1.2; margin:14px 0}
+    .lead{font-size:1.1rem; color:var(--muted)}
+    .hero-card{
+      background:linear-gradient(180deg, var(--surface), var(--surface-2));
+      border:1px solid var(--border); border-radius:var(--radius-lg); padding:22px;
+      box-shadow: var(--shadow);
+    }
+    .stats{display:flex; gap:16px; flex-wrap:wrap; margin-top:18px}
+    .stat{flex:1 1 160px; background:#0f1422; border:1px solid var(--border); border-radius:14px; padding:14px}
+    .stat b{display:block; font-size:1.2rem}
+    .section{padding:30px 0}
+    .card{
+      background:linear-gradient(180deg, var(--surface), var(--surface-2));
+      border:1px solid var(--border); border-radius:var(--radius); padding:22px; box-shadow:var(--shadow);
+    }
+    .list{display:grid; grid-template-columns:1fr 1fr; gap:16px}
+    @media (max-width: 780px){ .list{grid-template-columns:1fr} }
+    .list-item{border:1px solid #1f2638; border-radius:12px; padding:14px; background:#0f1422}
+    .check{color:var(--success); margin-right:8px}
+    .price{
+      display:flex; align-items:end; gap:12px; margin-top:10px
+    }
+    .price .num{font-size:2rem; font-weight:800}
+    .price .note{color:var(--muted)}
+    .cta-row{display:flex; gap:12px; flex-wrap:wrap; margin-top:16px}
+    .guarantee{color:#9bd8b6; font-size:.95rem}
+    .testi{display:grid; grid-template-columns:1fr 1fr; gap:16px}
+    @media (max-width: 900px){ .testi{grid-template-columns:1fr} }
+    .avatar{width:42px; height:42px; border-radius:999px; background:#20283a; margin-right:10px}
+    .faq{display:grid; grid-template-columns:1fr 1fr; gap:16px}
+    @media (max-width: 900px){ .faq{grid-template-columns:1fr} }
+    details{
+      background:#0f1422; border:1px solid var(--border); border-radius:12px; padding:12px
+    }
+    details[open]{background:#131a2b}
+    summary{cursor:pointer; font-weight:700}
+    footer{padding:40px 0; color:var(--muted); border-top:1px solid var(--border)}
+    .small{font-size:.9rem}
+    /* smooth anchor scroll */
+    html{scroll-behavior:smooth}
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Course",
+    "name": "Solutions/Sales Engineer Masterclass",
+    "description": "A practical, high‑impact masterclass for Solutions and Sales Engineers: discovery, demos, architecture, objection handling, and deal strategy.",
+    "provider": { "@type": "Organization", "name": "Your Brand" },
+    "offers": {
+      "@type": "Offer",
+      "price": "999.99",
+      "priceCurrency": "CAD",
+      "availability": "https://schema.org/InStock"
+    }
+  }
+  </script>
+</head>
+<body>
+  <header class="nav" aria-label="Primary">
+    <div class="container nav-inner">
+      <div class="brand">
+        <div class="logo" aria-hidden="true"></div>
+        <div class="title">SE Masterclass</div>
+      </div>
+      <nav class="nav-cta" aria-label="Actions">
+        <a class="btn" href="#curriculum">Curriculum</a>
+        <a class="btn btn-primary" href="STRIPE_CHECKOUT_URL" rel="noopener">Enroll Now</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-wrap">
+        <div>
+          <span class="tag">Solutions/Sales Engineer • Cohort‑ready • Self‑paced</span>
+          <h1>Become a top‑performing Solutions Engineer. Win bigger, faster.</h1>
+          <p class="lead">A practical masterclass to level up discovery, demos, architecture, and deal strategy—built for real‑world SE work, not theory.</p>
+          <div class="stats">
+            <div class="stat"><b>10+ hours</b><span class="small">video & exercises</span></div>
+            <div class="stat"><b>Templates</b><span class="small">demo, discovery, ROI</span></div>
+            <div class="stat"><b>Lifetime</b><span class="small">updates included</span></div>
+            <div class="stat"><b>Community</b><span class="small">Q&A office hours</span></div>
+          </div>
+        </div>
+        <div class="hero-card" aria-label="Offer">
+          <h2>Masterclass Enrollment</h2>
+          <ul>
+            <li>Step‑by‑step curriculum with practical frameworks</li>
+            <li>Real assets: discovery guide, demo scripts, architecture diagrams</li>
+            <li>Lifetime access + updates</li>
+            <li>Bonus: objection handling & competitive strategy playbook</li>
+          </ul>
+          <div class="price">
+            <div class="num">$999.99 CAD</div>
+            <div class="note">One‑time payment • Secure Stripe Checkout</div>
+          </div>
+          <div class="cta-row">
+            <a class="btn btn-primary" href="STRIPE_CHECKOUT_URL" rel="noopener">Enroll Now</a>
+            <a class="btn btn-outline" href="#faq">Questions? Read FAQ</a>
+          </div>
+          <p class="guarantee">30‑day satisfaction guarantee. If it’s not helpful, you’ll get a refund.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="card">
+          <h2>What you’ll learn</h2>
+          <div class="list">
+            <div class="list-item"><span class="check">✔</span>High‑impact discovery: uncover pain, value, and success criteria</div>
+            <div class="list-item"><span class="check">✔</span>Demo mechanics: storyline, setup, handling edge cases live</div>
+            <div class="list-item"><span class="check">✔</span>Architecture: map requirements to scalable solutions</div>
+            <div class="list-item"><span class="check">✔</span>Proof: POCs, pilots, and technical validation that closes</div>
+            <div class="list-item"><span class="check">✔</span>Objections: pricing, security, compliance, “build vs buy”</div>
+            <div class="list-item"><span class="check">✔</span>Deal strategy: MEDDICC/Champs, champions, and mutual plans</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="curriculum" class="section">
+      <div class="container">
+        <div class="card">
+          <h2>Curriculum Overview</h2>
+          <ol>
+            <li>Foundations of the SE role and impact</li>
+            <li>Discovery frameworks and call flows</li>
+            <li>Designing high‑leverage demos</li>
+            <li>Solution architecture & integration patterns</li>
+            <li>Security, compliance, and procurement basics</li>
+            <li>Running POCs/pilots and measuring ROI</li>
+            <li>Objection handling & competitive strategy</li>
+            <li>Deal strategy: qualification, mutual action plans</li>
+            <li>Career growth: portfolio, storytelling, interviews</li>
+          </ol>
+          <div class="cta-row">
+            <a class="btn btn-primary" href="STRIPE_CHECKOUT_URL" rel="noopener">Enroll Now</a>
+            <a class="btn" href="#testimonials">See Results</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="testimonials" class="section">
+      <div class="container">
+        <div class="card">
+          <h2>Results & Testimonials</h2>
+          <div class="testi">
+            <div class="list-item" style="display:flex; align-items:flex-start">
+              <div class="avatar" aria-hidden="true"></div>
+              <div>
+                <strong>Alex R.</strong> • Senior SE
+                <p>“Closed my biggest deal after reworking discovery and demo flow—this course gave me the playbook.”</p>
+              </div>
+            </div>
+            <div class="list-item" style="display:flex; align-items:flex-start">
+              <div class="avatar" aria-hidden="true"></div>
+              <div>
+                <strong>Priya S.</strong> • Solutions Architect
+                <p>“The architecture templates saved hours and made our POC land cleanly with security.”</p>
+              </div>
+            </div>
+          </div>
+          <p class="small" style="margin-top:10px">Replace these with real quotes/logos for social proof.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="faq" class="section">
+      <div class="container">
+        <div class="card">
+          <h2>FAQ</h2>
+          <div class="faq">
+            <details>
+              <summary>Who is this for?</summary>
+              <p>Solutions Engineers, Sales Engineers, Solutions Architects, and technically‑minded AM/CS professionals who want a practical, repeatable playbook.</p>
+            </details>
+            <details>
+              <summary>How is the course delivered?</summary>
+              <p>Self‑paced video lessons with templates and exercises. Optional office hours/Q&A for deeper dives.</p>
+            </details>
+            <details>
+              <summary>What’s the time commitment?</summary>
+              <p>Most students complete core modules in 2–3 weeks, applying frameworks to active deals as they go.</p>
+            </details>
+            <details>
+              <summary>Do you offer refunds?</summary>
+              <p>Yes—30‑day satisfaction guarantee. If it’s not helpful, you’ll get a refund.</p>
+            </details>
+            <details>
+              <summary>Can I expense this?</summary>
+              <p>Many employers reimburse professional training. We provide an itemized receipt via Stripe Checkout.</p>
+            </details>
+          </div>
+          <div class="cta-row">
+            <a class="btn btn-primary" href="https://buy.stripe.com/bJecMZ0p75Tc9rM9TvgMw00" rel="noopener">Enroll Now</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="small">© <span id="year"></span> SE Masterclass • Secure checkout via Stripe</div>
+      <div class="small">Questions? Email <a href="mailto:you@example.com">you@example.com</a></div>
+    </div>
+  </footer>
+
+  <script>
+    // Set current year in footer
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Optional: Basic outbound click tracking for the Stripe CTA (no external libs)
+    (function(){
+      const stripeLinks = document.querySelectorAll('a[href^="http"], a[href^="https"]');
+      stripeLinks.forEach(a=>{
+        if(a.href.includes('stripe.com') || a.href.includes('buy.stripe')){
+          a.addEventListener('click',()=>{ try { console.log('CTA click: Stripe Checkout'); } catch(e){} });
+        }
+      });
+    })();
+  </script>
+</body>
+</html>
